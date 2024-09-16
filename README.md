@@ -34,6 +34,9 @@ Password: passwd123
 ## Article Reference
 This lab is based on concepts discussed in the article:
 
-- JavaScript Analysis: Identifying and Exploiting Web Weaknesses
+- [JavaScript Analysis: Identifying and Exploiting Web Weaknesses](https://medium.com/)
 
 It’s recommended to read the article to gain insight into access control weaknesses before diving into the lab.
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](https://docs.github.com/en/github/writing-on-github) file for details.
