@@ -1,5 +1,5 @@
 # Access Control Web Lab (ACWL)
-Access Control Web Lab (ACWL) is a web-based application designed for practice and in-depth understanding of access control vulnerabilities. This lab draws on the article “JavaScript Analysis: Identifying and Exploiting Web Weaknesses”, which focuses on access control vulnerabilities in web applications.
+Access Control Web Lab (ACWL) is a web-based application designed for practice and in-depth understanding of access control vulnerabilities. This lab draws on the article "[JavaScript Analysis: Identifying and Exploiting Web Weaknesses](https://medium.com/mii-cybersec/javascript-analysis-identifying-and-exploiting-web-weaknesses-33319cac2b01)", which focuses on access control vulnerabilities in web applications.
 
 ## Getting Started
 To start testing and exploring the vulnerabilities discussed in the article, follow these steps:
@@ -12,7 +12,7 @@ cd ACWL
 
 ### Install Dependencies
 ```
-pip install -r requirements.txt
+pip install Flask
 ```
 
 ### Run the Application
@@ -34,7 +34,7 @@ Password: passwd123
 ## Article Reference
 This lab is based on concepts discussed in the article:
 
-- [JavaScript Analysis: Identifying and Exploiting Web Weaknesses](https://medium.com/)
+- [JavaScript Analysis: Identifying and Exploiting Web Weaknesses](https://medium.com/mii-cybersec/javascript-analysis-identifying-and-exploiting-web-weaknesses-33319cac2b01)
 
 It’s recommended to read the article to gain insight into access control weaknesses before diving into the lab.
 
