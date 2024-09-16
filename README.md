@@ -6,8 +6,8 @@ To start testing and exploring the vulnerabilities discussed in the article, fol
 
 ### Clone the Repository
 ```
-git clone https://github.com/your-username/repo-name.git
-cd repo-name
+git clone https://github.com/0xshdax/ACWL/
+cd ACWL
 ```
 
 ### Install Dependencies
