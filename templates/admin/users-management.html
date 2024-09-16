@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div id="navbar" class="navbar">
+        <div class="navbar-header">
+            <a class="navbar-brand">LOCAL APP</a>
+        </div>
+        <hr>
+        <div id="menu-container"></div>
+    </div>
+
+    <div class="main">
+        {% include 'include/headers.html' %}
+        <div class="container">
+            <div class="content">
+                <h1>Users Management</h1>
+                <hr>
+                <p>This is your dashboard. You can manage your data and profile here.</p>
+                <div class="table-container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="user-table-body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    window.toggleNavbar = () => {
+        const navbar = document.getElementById("navbar");
+        const mainContent = document.querySelector(".main");
+        const menuBtn = document.getElementById("menu-btn");
+
+        if (navbar && mainContent && menuBtn) {
+            navbar.classList.toggle("closed");
+            mainContent.classList.toggle("closed");
+            menuBtn.innerHTML = navbar.classList.contains("closed") ? "☰" : "X";
+        } else {
+            console.error('Elements not found');
+        }
+    };
+
+    window.toggleLogoutDropdown = () => {
+        const logoutDropdown = document.getElementById("logout-dropdown");
+        if (logoutDropdown) {
+            logoutDropdown.classList.toggle("show");
+        } else {
+            console.error('Logout dropdown not found');
+        }
+    };
+    </script>
+    <script>var userRole = "{{ session['role'] }}";</script>
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

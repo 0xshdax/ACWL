@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div id="navbar" class="navbar">
+        <div class="navbar-header">
+            <a class="navbar-brand">LOCAL APP</a>
+        </div>
+        <hr>
+        <div id="menu-container"></div>
+    </div>
+
+    <div class="main">
+        {% include 'include/headers.html' %}
+        <div class="container">
+            <div class="content">
+                <h1>Dashboard</h1>
+                <hr>
+
+                <h3>Welcome! {{ session['first_name'] | safe }}</h3>
+                <p>This is your dashboard. You can manage your data and profile here.</p>
+
+                <div class="stats">
+                    <div class="card">
+                        <h3>Reports</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vehicula tempus fringilla. Sed sollicitudin vehicula mi, nec convallis dolor fermentum sed. Nulla leo neque, consequat ut tortor sed, commodo accumsan tellus. Donec felis sapien, venenatis sed malesuada ullamcorper, bibendum nec lorem. Etiam tincidunt mattis felis nec euismod. Vivamus ullamcorper euismod eros, in scelerisque sem bibendum sit amet. Aliquam nec eros urna. Donec vitae lacus arcu.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Profile Overview</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pulvinar ex vitae est tincidunt feugiat. Morbi commodo aliquam turpis, in dictum lectus. Nullam feugiat imperdiet purus id tristique. Phasellus finibus lacinia elit, ut commodo felis bibendum non. Vestibulum vestibulum egestas mi, eget tempus libero hendrerit volutpat. Vestibulum ut tristique risus, vel cursus erat. Etiam pharetra metus nec lorem finibus suscipit. Nulla dapibus massa ut lectus sollicitudin, nec posuere neque molestie. Sed eleifend velit at scelerisque gravida. Vivamus et sodales nisl.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Notifications</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vehicula tempus fringilla. Sed sollicitudin vehicula mi, nec convallis dolor fermentum sed. Nulla leo neque, consequat ut tortor sed, commodo accumsan tellus. Donec felis sapien, venenatis sed malesuada ullamcorper, bibendum nec lorem. Etiam tincidunt mattis felis nec euismod. Vivamus ullamcorper euismod eros, in scelerisque sem bibendum sit amet. Aliquam nec eros urna. Donec vitae lacus arcu.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    window.toggleNavbar = () => {
+        const navbar = document.getElementById("navbar");
+        const mainContent = document.querySelector(".main");
+        const menuBtn = document.getElementById("menu-btn");
+
+        if (navbar && mainContent && menuBtn) {
+            navbar.classList.toggle("closed");
+            mainContent.classList.toggle("closed");
+            menuBtn.innerHTML = navbar.classList.contains("closed") ? "☰" : "X";
+        } else {
+            console.error('Elements not found');
+        }
+    };
+
+    window.toggleLogoutDropdown = () => {
+        const logoutDropdown = document.getElementById("logout-dropdown");
+        if (logoutDropdown) {
+            logoutDropdown.classList.toggle("show");
+        } else {
+            console.error('Logout dropdown not found');
+        }
+    };
+    </script>
+    <script>var userRole = "{{ session['role'] }}";</script>
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

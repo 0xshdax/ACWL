@@ -1,0 +1,12 @@
+<div class="header">
+            <button class="menu-btn" id="menu-btn" onclick="toggleNavbar()">X</button>
+            <div class="avatar-container" onclick="toggleLogoutDropdown()">
+                <label for="avatar-input" class="avatar-label">
+                    <img id="avatar" src="https://avatars.githubusercontent.com/u/29938825?v=4" alt="Avatar">
+                </label>
+
+                <div id="logout-dropdown" class="logout-dropdown">
+                    <a href="{{ url_for('logout') }}">Logout</a>
+                </div>
+            </div>
+        </div>
